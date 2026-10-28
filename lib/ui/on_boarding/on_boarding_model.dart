@@ -11,7 +11,7 @@ class OnBoardingModel {
   static List<OnBoardingModel> onboardingDate = [
     OnBoardingModel(
         image: "assets/images/on boarding 1.png",
-        title: "Welcome To Islmi App",
+        title: "Welcome To Islami App",
     ),
     OnBoardingModel(
         image: "assets/images/on boarding 2.png",
