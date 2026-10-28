@@ -4,9 +4,9 @@ import 'package:islami_app/ui/home/tabs/quran_tab/models/sura.dart';
 import 'package:islami_app/ui/sura_details/sura_details.dart';
 
 class SuraItem extends StatelessWidget {
-  Sura sura;
+  final Sura sura;
 
-  SuraItem({required this.sura, super.key});
+  const SuraItem({required this.sura, super.key});
 
   @override
   Widget build(BuildContext context) {

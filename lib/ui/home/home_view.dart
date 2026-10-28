@@ -63,8 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedIndex = newIndex;
           pageController.jumpToPage(
             selectedIndex,
-            // duration: Duration(milliseconds: 300),
-            // curve: Curves.easeInOut,
           );
           setState(() {});
         },

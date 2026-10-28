@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/theme/colors.dart';
+import 'package:islami_app/ui/time/azkar_details_screen.dart';
 
 class TimeScreen extends StatefulWidget {
   const TimeScreen({super.key});
@@ -144,10 +145,12 @@ class _TimeScreenState extends State<TimeScreen> {
                 crossAxisSpacing: 16,
                 children: [
                   _buildAzkarCard(
+                    context,
                     'Evening Azkar',
                     'assets/images/evening_azkar.png',
                   ),
                   _buildAzkarCard(
+                    context,
                     'Morning Azkar',
                     'assets/images/morning_azkar.png',
                   ),
@@ -192,35 +195,41 @@ class _TimeScreenState extends State<TimeScreen> {
     );
   }
 
-  Widget _buildAzkarCard(String title, String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: AppColors.gold,
-          width: 2,
-        ),
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
-        ),
-      ),
+  Widget _buildAzkarCard(BuildContext context, String title, String imagePath) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, AzkarDetailsScreen.routeName, arguments: title);
+      },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.black.withOpacity(0.5), // تغميق للصورة عشان الكلام يبان
+          border: Border.all(
+            color: AppColors.gold,
+            width: 2,
+          ),
+          image: DecorationImage(
+            image: AssetImage(imagePath),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColors.gold,
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.black.withOpacity(0.5),
+          ),
+          child: Center(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AppColors.gold,
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ),
       ),
     );
-  }}
+  }
+}

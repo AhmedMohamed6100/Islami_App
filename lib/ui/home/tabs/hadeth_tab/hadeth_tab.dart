@@ -45,78 +45,78 @@ class _HadethTabState extends State<HadethTab> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 25.0),
               child: CarouselSlider.builder(
-                  itemCount: ahadeth.length,
-                  itemBuilder: (context, index, realIndex) => InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        HadethDetails.routeName,
-                        arguments: ahadeth[index],
-                      );
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: AppColors.gold,
-                        borderRadius: BorderRadius.circular(32),
-                        image: DecorationImage(
-                          image: AssetImage("assets/images/img_hadeth_bg.png"),
-                          opacity: 0.5,
-                        ),
+                itemCount: ahadeth.length,
+                itemBuilder: (context, index, realIndex) => InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      HadethDetails.routeName,
+                      arguments: ahadeth[index],
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppColors.gold,
+                      borderRadius: BorderRadius.circular(32),
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/img_hadeth_bg.png"),
+                        opacity: 0.5,
                       ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              children: [
-                                ImageIcon(
-                                  AssetImage(
-                                    "assets/images/img_left_corner.png",
-                                  ),
-                                  color: AppColors.black,
-                                  size: 70,
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            children: [
+                              ImageIcon(
+                                AssetImage(
+                                  "assets/images/img_left_corner.png",
                                 ),
-                                Expanded(
-                                  child: Text(
-                                    ahadeth[index].name,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyles.labelLargeStyle(
-                                      color: AppColors.black,
-                                    ),
+                                color: AppColors.black,
+                                size: 70,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  ahadeth[index].name,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyles.labelLargeStyle(
+                                    color: AppColors.black,
                                   ),
                                 ),
-                                ImageIcon(
-                                  AssetImage(
-                                    "assets/images/img_right_corner.png",
-                                  ),
-                                  color: AppColors.black,
-                                  size: 70,
+                              ),
+                              ImageIcon(
+                                AssetImage(
+                                  "assets/images/img_right_corner.png",
                                 ),
-                              ],
-                            ),
+                                color: AppColors.black,
+                                size: 70,
+                              ),
+                            ],
                           ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Text(
-                                ahadeth[index].content,
-                                textAlign: TextAlign.center,
-                                style: TextStyles.bodyLargeStyle(
-                                  color: AppColors.black,
-                                ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              ahadeth[index].content,
+                              textAlign: TextAlign.center,
+                              style: TextStyles.bodyLargeStyle(
+                                color: AppColors.black,
                               ),
                             ),
                           ),
-                          Image.asset(
-                            "assets/images/img_card_decoration.png",
-                            width: double.infinity,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ],
-                      ),
+                        ),
+                        Image.asset(
+                          "assets/images/img_card_decoration.png",
+                          width: double.infinity,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ],
                     ),
                   ),
+                ),
                 options: CarouselOptions(
                   height: double.infinity,
                   viewportFraction: 0.8,

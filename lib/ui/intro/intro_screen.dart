@@ -43,10 +43,6 @@ class _IntroScreenState extends State<IntroScreen> {
                     "assets/images/mosque.png",
                     width: width * 0.7,
                   ).zoomIn(duration: Duration(milliseconds: 600)),
-                  Image.asset(
-                    "assets/images/branding.png",
-                    width: width * 0.5,
-                  ).zoomIn(duration: Duration(milliseconds: 600)),
                 ],
               ),
             ),
